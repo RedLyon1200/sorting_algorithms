@@ -20,11 +20,15 @@ typedef struct listint_s
 } listint_t;
 
 void swap(listint_t *current, listint_t *move);
+void _swap(int *x, int *y);
+int split(int *array, int first, int last, size_t size);
+void sort_recursion(int *array, int first, int last, size_t size);
 
 void print_array(const int *array, size_t size);
 void print_list(const listint_t *list);
 void bubble_sort(int *array, size_t size);
 void insertion_sort_list(listint_t **list);
 void selection_sort(int *array, size_t size);
+void quick_sort(int *array, size_t size);
 
 #endif
