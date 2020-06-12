@@ -1,6 +1,10 @@
 #include "sort.h"
-/* 
- * insertion_sort_list - sorts a list of doubly-bound integers in ascending order using the insert sort algorithm
+
+/**
+ * insertion_sort_list - sorts a list of doubly bound integers
+ * in ascending order using the insert sort algorithm
+ * @list: pointer to double linked list
+ * Return: None
  */
 
 void insertion_sort_list(listint_t **list)
@@ -33,6 +37,12 @@ void insertion_sort_list(listint_t **list)
 	}
 }
 
+/**
+ * swap - swap values
+ * @current: current values
+ * @move: value to move
+ * Return: None
+ */
 void swap(listint_t *current, listint_t *move)
 {
 	listint_t *ant = move->prev;
