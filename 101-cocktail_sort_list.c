@@ -33,6 +33,9 @@ void cocktail_sort_list(listint_t **list)
 	listint_t *node_tmp;
 	int num_changes = 1;
 
+	if (!list || !(*list))
+		return;
+
 	node_tmp = *list;
 
 	while (num_changes)
