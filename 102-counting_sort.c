@@ -32,10 +32,10 @@ void counting_sort(int *array, size_t size)
 	if (!array || size <= 1)
 		return;
 	max = find_max(array, size);
-	tmp = calloc(max + 1, sizeof(*tmp));
+	tmp = malloc((max + 1) * sizeof(*tmp));
 	if (tmp == NULL)
 		return;
-	cpy = malloc((size + 1) * sizeof(*cpy));
+	cpy = malloc(size * sizeof(*cpy));
 	if (cpy == NULL)
 	{
 		free(tmp);
