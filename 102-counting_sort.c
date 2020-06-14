@@ -54,20 +54,6 @@ void counting_sort(int *array, size_t size)
 		tmp[array[i]]--;
 		cpy[tmp[array[i]]] = array[i];
 	}
-	/* for (i = 1; i < max + 1; i++)
-	{
-		if (tmp[i] == 0)
-			i++;
-		else
-		{
-			j = tmp[i];
-			if (j != count)
-			{
-				cpy[count] = i;
-				count++;
-			}
-		}
-	} */
 	for (j = 0; j < size; j++)
 		array[j] = cpy[j];
 	free(cpy);
