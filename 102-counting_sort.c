@@ -36,7 +36,7 @@ void counting_sort(int *array, size_t size)
 	if (tmp == NULL)
 		return;
 	for (j = 0; j < max + 1; j++)
-    	tmp[j] = 0;
+		tmp[j] = 0;
 	cpy = malloc(size * sizeof(*cpy));
 	if (cpy == NULL)
 	{
