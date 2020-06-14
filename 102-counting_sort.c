@@ -26,7 +26,7 @@ int find_max(int *array, size_t size)
 
 void counting_sort(int *array, size_t size)
 {
-	int *tmp, *cpy;
+	int *tmp = NULL, *cpy = NULL;
 	unsigned int max = 0, i, j, count = 0;
 
 	if (!array || size <= 1)
@@ -37,7 +37,7 @@ void counting_sort(int *array, size_t size)
 		return;
 	for (j = 0; j < max + 1; j++)
 		tmp[j] = 0;
-	cpy = malloc(size * sizeof(*cpy));
+	cpy = malloc(size * sizeof(int));
 	if (cpy == NULL)
 	{
 		free(tmp);
