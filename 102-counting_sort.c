@@ -35,7 +35,7 @@ void counting_sort(int *array, size_t size)
 	tmp = calloc(max + 1, sizeof(*tmp));
 	if (tmp == NULL)
 		return;
-	cpy = malloc(size * sizeof(*cpy));
+	cpy = malloc((size + 1) * sizeof(*cpy));
 	if (cpy == NULL)
 	{
 		free(tmp);
