@@ -14,10 +14,11 @@ void shell_sort(int *array, size_t size)
 	unsigned int intervalo = 1, i = 0, aux = 0;
 	int val = 0;
 
+	if (!array || size <= 1)
+		return;
+
 	while (intervalo <= size / 3)
-	{
 		intervalo = intervalo * 3 + 1;
-	}
 
 	while (intervalo > 0)
 	{
