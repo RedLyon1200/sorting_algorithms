@@ -27,7 +27,7 @@ int find_max(int *array, size_t size)
 void counting_sort(int *array, size_t size)
 {
 	int *tmp = NULL, *cpy = NULL;
-	unsigned int max = 0, i, j, count = 0;
+	unsigned int max = 0, i, j;
 
 	if (!array || size <= 1)
 		return;
@@ -48,7 +48,13 @@ void counting_sort(int *array, size_t size)
 	for (j = 1; j < max + 1; j++)
 		tmp[j] += tmp[j - 1];
 	print_array(tmp, max + 1);
-	for (i = 1; i < max + 1; i++)
+
+	for (i = 0; i < size; i++)
+	{
+		tmp[array[i]]--;
+		cpy[tmp[array[i]]] = array[i];
+	}
+	/* for (i = 1; i < max + 1; i++)
 	{
 		if (tmp[i] == 0)
 			i++;
@@ -61,7 +67,7 @@ void counting_sort(int *array, size_t size)
 				count++;
 			}
 		}
-	}
+	} */
 	for (j = 0; j < size; j++)
 		array[j] = cpy[j];
 	free(cpy);
