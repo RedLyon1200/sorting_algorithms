@@ -45,8 +45,13 @@ void insertion_sort_list(listint_t **list)
  */
 void swap(listint_t *current, listint_t *move)
 {
-	listint_t *ant = move->prev;
-	listint_t *pos = current->next;
+	listint_t *ant = NULL;
+	listint_t *pos = NULL;
+
+	if (current->next)
+		pos = current->next;
+	if (move->prev)
+		ant = move->prev;
 
 	move->next = current->next;
 	current->next = move;
