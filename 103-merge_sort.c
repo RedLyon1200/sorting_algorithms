@@ -11,7 +11,8 @@
  */
 void merge_recursion(int *arr, int *tmp, size_t size)
 {
-	unsigned int middle, i, j = 0, k = 0;
+	unsigned int i, j = 0, k = 0;
+	size_t middle;
 
 	if (size <= 1)
 		return;
@@ -67,4 +68,6 @@ void merge_sort(int *array, size_t size)
 		return;
 
 	merge_recursion(array, tmp, size);
+
+	free(tmp);
 }
