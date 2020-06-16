@@ -27,9 +27,8 @@ int find_max_rad(int *array, size_t size)
 
 void rad_sort(int *array, size_t size, int num)
 {
-	int *tmp = NULL;
-	int i;
-	int *aux = NULL;
+	int *tmp = NULL, *aux = NULL, j;
+	unsigned int i;
 
 	aux = malloc(size * sizeof(int));
 	if (aux == NULL)
@@ -39,26 +38,22 @@ void rad_sort(int *array, size_t size, int num)
 	if (tmp == NULL)
 		return;
 
-	for (i = 0; i < (int)size; i++)
+	for (i = 0; i < size; i++)
 		aux[i] = 0;
 
-	for (i = 0; i < (int)size; i++)
-	{
+	for (i = 0; i < size; i++)
 		aux[(array[i] / num) % 10]++;
-	}
 
-	for (i = 1; i < (int)size; i++)
-	{
+	for (i = 1; i < size; i++)
 		aux[i] += aux[i - 1];
-	}
 
-	for (i = (int)size - 1; i >= 0; i--)
+	for (j = (int)size - 1; j >= 0; j--)
 	{
-		tmp[aux[(array[i] / num) % 10] - 1] = array[i];
-		aux[(array[i] / num) % 10]--;
+		tmp[aux[(array[j] / num) % 10] - 1] = array[j];
+		aux[(array[j] / num) % 10]--;
 	}
 
-	for (i = 0; i < (int)size; i++)
+	for (i = 0; i < size; i++)
 	{
 		array[i] = tmp[i];
 	}
