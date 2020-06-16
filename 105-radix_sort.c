@@ -28,16 +28,16 @@ int find_max_rad(int *array, size_t size)
 
 void rad_sort(int *array, size_t size, int num, int *tmp)
 {
-	int aux[10] = {0}, j, _size = size - 1;
+	int aux[10] = {0}, j;
 	unsigned int i;
 
 	for (i = 0; i < size; i++)
 		aux[(array[i] / num) % 10]++;
 
-	for (i = 1; i < size; i++)
+	for (i = 1; i < 10; i++)
 		aux[i] += aux[i - 1];
 
-	for (j = _size; j >= 0; j--)
+	for (j = (int)size - 1; j >= 0; j--)
 	{
 		tmp[aux[(array[j] / num) % 10] - 1] = array[j];
 		aux[(array[j] / num) % 10]--;
