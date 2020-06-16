@@ -62,6 +62,7 @@ void rad_sort(int *array, size_t size, int num)
 	}
 
 	free(tmp);
+	free(aux);
 }
 
 /**
