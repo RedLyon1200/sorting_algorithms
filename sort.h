@@ -31,11 +31,10 @@ void merge_recursion(int *arr, int *tmp, size_t size);
 void swap_heap(int *a, int *b);
 void if_heap(int *arr, int n, int i, size_t size);
 int find_max_rad(int *array, size_t size);
-void rad_sort(int *array, size_t size, int num);
+void rad_sort(int *array, size_t size, int num, int *tmp);
 void sort_hoare(int *array, size_t size, int left, int right);
 int hoare_split(int *array, size_t size, int left, int right);
 void swap_hoare(int *a, int *b);
-
 
 void print_array(const int *array, size_t size);
 void print_list(const listint_t *list);
