@@ -22,20 +22,17 @@ int find_max_rad(int *array, size_t size)
  * @array: pointer to list
  * @size: size of array
  * @num: significant digit
+ * @tmp: pointer tmp
  * Return: None
  */
 
-void rad_sort(int *array, size_t size, int num)
+void rad_sort(int *array, size_t size, int num, int *tmp)
 {
-	int *tmp = NULL, *aux = NULL, j, _size = size - 1;
+	int *aux = NULL, j, _size = size - 1;
 	unsigned int i;
 
 	aux = malloc(size * sizeof(int));
 	if (aux == NULL)
-		return;
-
-	tmp = malloc(size * sizeof(int));
-	if (tmp == NULL)
 		return;
 
 	for (i = 0; i < size; i++)
@@ -56,7 +53,6 @@ void rad_sort(int *array, size_t size, int num)
 	for (i = 0; i < size; i++)
 		array[i] = tmp[i];
 
-	free(tmp);
 	free(aux);
 }
 
@@ -69,16 +65,22 @@ void rad_sort(int *array, size_t size, int num)
 
 void radix_sort(int *array, size_t size)
 {
-	int max, i;
+	int max, i, *tmp = NULL;
 
 	if (!array || size <= 1)
+		return;
+
+	tmp = malloc(size * sizeof(int));
+	if (!tmp)
 		return;
 
 	max = find_max_rad(array, size);
 
 	for (i = 1; max / i > 0; i *= 10)
 	{
-		rad_sort(array, size, i);
+		rad_sort(array, size, i, tmp);
 		print_array(array, size);
 	}
+
+	free(tmp);
 }
