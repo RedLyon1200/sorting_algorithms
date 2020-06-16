@@ -32,9 +32,11 @@ void rad_sort(int *array, size_t size, int num)
 	int *aux = NULL;
 
 	aux = malloc(size * sizeof(int));
+	if (aux == NULL)
+		return;
 
 	tmp = malloc(size * sizeof(int));
-	if (tmp == NULL || aux == NULL)
+	if (tmp == NULL)
 		return;
 
 	for (i = 0; i < (int)size; i++)
