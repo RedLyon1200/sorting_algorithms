@@ -1151,5 +1151,6 @@ alex@/tmp/sort$ ./deck
 alex@/tmp/sort$
 ```
 ### Authors
-[Marlon Aurelio García Morales](https://github.com/clasesucatmarlon/)
-[Santiago Agudelo gaviria](https://github.com/RedLyon1200/)
+>[Marlon Aurelio García Morales](https://github.com/clasesucatmarlon/)  
+
+>[Santiago Agudelo Gaviria](https://github.com/RedLyon1200/)
