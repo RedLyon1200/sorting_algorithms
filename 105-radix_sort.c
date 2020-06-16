@@ -34,8 +34,10 @@ void rad_sort(int *array, size_t size, int num, int *tmp)
 	for (i = 0; i < size; i++)
 		aux[(array[i] / num) % 10]++;
 
-	for (i = 1; i < 10; i++)
+	for (i = 1; i < size; i++)
+	{
 		aux[i] += aux[i - 1];
+	}
 
 	for (j = (int)size - 1; j >= 0; j--)
 	{
